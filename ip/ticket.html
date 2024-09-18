@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="ticket-confirmation">
+        <div class="ticket-content">
+            <h2>Booking Confirmation</h2>
+            <div class="ticket-details">
+                <h3>Your Ticket</h3>
+                <p><strong>Bus Type:</strong> <span id="ticket-bus-type"></span></p>
+                <p><strong>From:</strong> <span id="ticket-from-city"></span></p>
+                <p><strong>To:</strong> <span id="ticket-to-city"></span></p>
+                <p><strong>Seat Number:</strong> <span id="ticket-seat-number"></span></p>
+                <p><strong>Payment Method:</strong> <span id="ticket-payment-method"></span></p>
+            </div>
+            <button onclick="window.print()">Print Ticket</button>
+            <button onclick="window.location.href='book.html'">Back to Booking</button>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById('ticket-bus-type').textContent = params.get('busType');
+            document.getElementById('ticket-from-city').textContent = params.get('fromCity');
+            document.getElementById('ticket-to-city').textContent = params.get('toCity');
+            document.getElementById('ticket-seat-number').textContent = params.get('seatNumber');
+            document.getElementById('ticket-payment-method').textContent = params.get('paymentMethod');
+        });
+    </script>
+</body>
+</html>

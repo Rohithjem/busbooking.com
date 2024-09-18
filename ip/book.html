@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Bus Journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section class="book-now">
+        <div class="background-overlay">
+            <img src="banner2.png" alt="Bus Logo" class="background-logo">
+        </div>
+        <div class="book-now-content">
+            <h2>Book Your Journey</h2>
+            <div class="info">
+                <div class="info-item">
+                    <h3>Choose Your Bus Type</h3>
+                    <select id="bus-type" name="bus-type">
+                        <option value="">Select Bus Type</option>
+                        <option value="express">Express - 6:00 AM</option>
+                        <option value="luxury">Luxury - 9:00 AM</option>
+                        <option value="standard">Standard - 12:00 PM</option>
+                    </select>
+                </div>
+
+                <div class="info-item">
+                    <h3>From:</h3>
+                    <input type="text" id="from-city" name="from-city" placeholder="Departure City">
+                </div>
+
+                <div class="info-item">
+                    <h3>To:</h3>
+                    <input type="text" id="to-city" name="to-city" placeholder="Destination City">
+                </div>
+
+                <div id="seat-selection" class="hidden">
+                    <h3>Select Your Seat:</h3>
+                    <div class="seat-container">
+                        <div class="seat-section">
+                            <h4>Upper Berths</h4>
+                            <div id="upper-berths" class="seat-grid"></div>
+                        </div>
+                        <div class="seat-section">
+                            <h4>Lower Berths</h4>
+                            <div id="lower-berths" class="seat-grid"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="payment-section" class="hidden">
+                    <h3>Payment Method:</h3>
+                    <div class="payment-options">
+                        <label>
+                            <input type="radio" name="payment-method" value="credit-card" checked> Credit Card
+                        </label>
+                        <label>
+                            <input type="radio" name="payment-method" value="paypal"> PayPal
+                        </label>
+                        <label>
+                            <input type="radio" name="payment-method" value="bank-transfer"> Bank Transfer
+                        </label>
+                    </div>
+                    <button type="button" id="confirm-booking" class="cta-btn">Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
